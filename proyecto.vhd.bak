@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all ;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity cuenta is port( clk: in std_logic;
+							  q: inout std_logic_vector (1 to down 0 );
+							  F: out std_logic_vector (0 to 3));
+							  
+end proyecto;
+
+architecture irving of proyecto is
+begin
+
+contador: process(clk)
+begin
+if (clk' evento and clk='1')then
+q<=q+1;
+end if;
+end process contador;
+
+decodificador process (q)
+begin
+case q is
+
+when "00"=>f<="1000";
+when "01"=>f<="0100";
+when "10"=>f<="0010";
+when "others"=>f<="0001";
+end case;
+end process decodificador;
+end irving;
+
+
