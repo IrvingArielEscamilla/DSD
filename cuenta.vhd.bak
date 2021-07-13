@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity cuenta is
+port(clk: in sd_logic;
+	q:inout std_logic_vector (3 downto 0 ));
+	end cuenta;
+	
+architecture irving of cuenta is 
+begin
+process(clk) --lista sensitiva
+begin
+if( clk 'even and clk = '1') then
+q<= q+1;
+
+end if;
+end process;
+end irving;
